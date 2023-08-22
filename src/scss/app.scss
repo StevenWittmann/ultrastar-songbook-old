@@ -1,0 +1,75 @@
+input {
+	height: 2rem;
+	border: #ddd 1px solid;
+	margin-bottom: 1rem;
+	font-size: 1.2em;
+	padding-left: 0.5rem;
+}
+
+.anchors {
+	margin: 0 0 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.25rem;
+}
+
+a.button {
+	width: 2.5rem;
+	height: 2.5rem;
+	border: $prime 1px solid;
+	color: $prime;
+	text-decoration: none;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&.back-to-top {
+		position: fixed;
+		bottom: 0;
+		right: 1rem;
+		background-color: $prime;
+		color: #fff;
+	}
+}
+
+tr.heading {
+	margin: 0.5rem 0;
+	display: block;
+
+	& + span {
+		color: $prime;
+		font-size: x-large;
+		margin-left: 0.25rem;
+	}
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th,
+td {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+	@media (max-width: 750px) {
+		max-width: 180px;
+	}
+}
+tr:nth-child(even) {
+	opacity: 0.7;
+}
+
+@media (max-width: 750px) {
+	th:not(.heading),
+	td {
+		&:nth-of-type(1),
+		&:nth-of-type(4),
+		&:nth-of-type(5),
+		&:nth-of-type(6) {
+			display: none;
+		}
+	}
+}

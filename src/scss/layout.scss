@@ -1,0 +1,33 @@
+.main-layout {
+	min-height: 100vh;
+	min-height: 100dvh;
+
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	justify-content: center;
+
+	padding: 0 2rem;
+
+	@media (max-width: 750px) {
+		padding: 0 0.5rem;
+	}
+
+	header {
+		text-align: center;
+	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 80vw;
+	}
+
+	footer {
+		padding: 1rem;
+		width: 100%;
+		max-width: 30rem;
+		display: flex;
+		justify-content: center;
+	}
+}

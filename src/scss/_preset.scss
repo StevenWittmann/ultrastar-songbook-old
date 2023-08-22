@@ -1,0 +1,70 @@
+// In dieser Datei werden einfache Presets geladen, diese Datei kann
+// sofen das Projekt für ein wirkliches Projekt als Grundlage
+// dient einfach gelöscht werden.
+
+$prime: #ff6e48;
+$ciBlue: #00fff1;
+$ciRed: #ff00aa;
+$ciWhite: #ffffff;
+$ciGrey: #ccc;
+$ciGreen: #46fcb4;
+$ciSecond: #0c1016;
+
+$roboto: 'Roboto';
+
+@font-face {
+	font-family: $roboto;
+	src: url('../assets/fonts/Roboto-Bold.ttf');
+	font-weight: 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: $roboto;
+	src: url('../assets/fonts/Roboto-Regular.ttf');
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: $roboto;
+	src: url('../assets/fonts/Roboto-Light.ttf');
+	font-weight: 300;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ionicons';
+	src: url('../assets/fonts/ionicons.ttf');
+	font-display: swap;
+}
+
+body,
+html {
+	background-color: $ciSecond;
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+	color: $ciWhite;
+	font-family: $roboto;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+html[data-debug='true'] * {
+	outline: 3px solid limegreen;
+	background: rgb(0 100 0 / 0.1) !important;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h3 {
+	margin: 0;
+	margin-top: 0.5rem;
+}
+
+.hidden {
+	display: none;
+}
