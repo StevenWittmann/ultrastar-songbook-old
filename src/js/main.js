@@ -10,6 +10,7 @@ searchInput.addEventListener('input', () => {
 	const rows = tableBody.querySelectorAll('tr');
 
 	rows.forEach((row) => {
+		if (!row.cells[1]) return;
 		const artist = row.cells[1].textContent.toLowerCase();
 		const track = row.cells[2].textContent.toLowerCase();
 

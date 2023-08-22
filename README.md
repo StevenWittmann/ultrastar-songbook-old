@@ -5,6 +5,9 @@
 
 ## Befehle
 
+before dev import './../Songliste.html' should not happen
+before build import must be set
+
 ```bash
 > npm i
 > npm run dev
