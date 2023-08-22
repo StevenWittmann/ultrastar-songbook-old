@@ -1,4 +1,5 @@
 import './../scss/style.scss';
+import './../Songliste.html';
 
 const searchInput = document.getElementById('searchInput');
 const tableBody = document.getElementById('tableBody');
