@@ -5,25 +5,45 @@ const searchInput = document.getElementById('searchInput');
 const tableBody = document.getElementById('tableBody');
 const table = document.querySelector('.list');
 
+let timer = 0;
 searchInput.addEventListener('input', () => {
-	const searchTerm = searchInput.value.toLowerCase();
-	const rows = tableBody.querySelectorAll('tr');
+	window.clearTimeout(timer);
+	timer = setTimeout(function () {
+		const searchTerm = searchInput.value.toLowerCase().split(' ');
+		const rows = tableBody.querySelectorAll('tr');
 
-	rows.forEach((row) => {
-		if (!row.cells[1]) return;
-
-		const foundData = [...row.cells].find((cell) => {
-			const cellContent = cell.textContent.toLowerCase();
-			return cellContent.includes(searchTerm);
+		rows.forEach((row) => {
+			if (!row.cells[1]) return;
+			const foundData = [...row.cells].find((cell) => {
+				const cellContent = cell.textContent.toLowerCase();
+				return searchTerm.some((substrings) => {
+					highlightText(cell, substrings);
+					return cellContent.includes(substrings);
+				});
+			});
+			if (foundData) {
+				row.style.display = '';
+			} else {
+				row.style.display = 'none';
+			}
 		});
-
-		if (foundData) {
-			row.style.display = '';
-		} else {
-			row.style.display = 'none';
-		}
-	});
+	}, 750);
 });
+
+function highlightText(element, searchTerm) {
+	const text = element.textContent;
+	const startIndex = text.toLowerCase().indexOf(searchTerm);
+
+	// first clearing up
+	element.innerHTML = text;
+
+	// insert mark element for hightlighting
+	if (startIndex !== -1 && searchTerm.length > 1) {
+		const matchedText = text.substr(startIndex, searchTerm.length);
+		const highlighted = text.replace(new RegExp(matchedText, 'gi'), '<mark>' + matchedText + '</mark>');
+		element.innerHTML = highlighted;
+	}
+}
 
 function createHeadlinesAndCharacterButtons(extractedTBody) {
 	let lastUniqueChar = null;

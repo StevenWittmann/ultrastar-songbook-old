@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## [0.3.0]
+
+### Add
+
+-   wait 750ms till trigger the search function
+-   search multiple words, if matches any it is a match
+-   highlight matches
+
 ## [0.2.0]
 
 ### Add
