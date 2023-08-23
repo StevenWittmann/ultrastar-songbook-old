@@ -27,8 +27,15 @@ searchInput.addEventListener('input', () => {
 				row.style.display = 'none';
 			}
 		});
+
+		setSongCount();
 	}, 750);
 });
+
+function setSongCount() {
+	const songCount = document.querySelectorAll('tbody tr:not([style="display: none;"])').length;
+	document.querySelector('#songCount').textContent = songCount;
+}
 
 function highlightText(element, searchTerm) {
 	const text = element.textContent;
@@ -85,4 +92,5 @@ fetch('Songliste.html')
 		createHeadlinesAndCharacterButtons(extractedTBody);
 
 		tableBody.innerHTML = extractedTBody.innerHTML;
+		setSongCount();
 	});
