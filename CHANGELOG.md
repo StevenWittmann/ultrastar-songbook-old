@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## [0.2.0]
+
+### Add
+
+-   table responsive with scrolling
+-   search for every data not only artist or song
+-   hide letter box and letters on type
+
 ## [0.1.1]
 
 ### Add
@@ -42,4 +50,4 @@ All notable changes to this project will be documented in this file.
 ## Future Featureideas
 
 -   Wishlist works with session or local storage
--   A - Z Anchorlinks
+-   Highlight searchterm in Title, Artist

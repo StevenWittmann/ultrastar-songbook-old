@@ -49,6 +49,10 @@ html {
 	font-family: $roboto;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
+
+	@media (max-width: 500px) {
+		font-size: medium;
+	}
 }
 
 html[data-debug='true'] * {

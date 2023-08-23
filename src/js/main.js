@@ -11,10 +11,13 @@ searchInput.addEventListener('input', () => {
 
 	rows.forEach((row) => {
 		if (!row.cells[1]) return;
-		const artist = row.cells[1].textContent.toLowerCase();
-		const track = row.cells[2].textContent.toLowerCase();
 
-		if (artist.includes(searchTerm) || track.includes(searchTerm)) {
+		const foundData = [...row.cells].find((cell) => {
+			const cellContent = cell.textContent.toLowerCase();
+			return cellContent.includes(searchTerm);
+		});
+
+		if (foundData) {
 			row.style.display = '';
 		} else {
 			row.style.display = 'none';
