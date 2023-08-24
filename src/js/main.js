@@ -27,13 +27,12 @@ searchInput.addEventListener('input', () => {
 				row.style.display = 'none';
 			}
 		});
-
 		setSongCount();
 	}, 750);
 });
 
 function setSongCount() {
-	const songCount = document.querySelectorAll('tbody tr:not([style="display: none;"])').length;
+	const songCount = document.querySelectorAll('tbody tr:not([id]):not([style="display: none;"])').length;
 	document.querySelector('#songCount').textContent = songCount;
 }
 
